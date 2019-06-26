@@ -1,0 +1,138 @@
+
+//1081-1368
+@media screen and (max-width: 1368px) {
+  body {
+    font-size: 16px;
+  }
+
+  .header .logo {
+    height: 50px;
+    width: 50px;
+  }
+
+  .header_content {
+    padding-right: 7vw;
+  }
+  .header_hello {
+    margin-top: 7vh;
+  }
+}
+//769-1080
+@media  screen and (max-width: 1080px) {
+  .portfolio_item {
+    &_img {
+      opacity: .2;
+    }
+    &_info {
+      margin-left: 80px;
+    }
+    .check {
+      bottom: 0;
+    }
+  }
+
+  .header .logo {
+    height: 50px;
+    width: 50px;
+  }
+
+  .header_hello {
+    margin-top: 0;
+  }
+  .header_hello ul li {
+    font-size: 5em;
+  }
+  .header_content_descr {
+    width: 70vw;
+    font-size: .8em;
+  }
+  .header .scroll {
+    transform: rotate(-90deg) translate(50px, calc(-50% - 10px));
+    bottom: 60px;
+    &.visible {
+      transform: rotate(-90deg) translate(0, calc(-50% - 10px));
+    }
+  }
+
+  .header .scroll:before {
+    width: 120px;
+    left: -125px;
+  }
+
+  .portfolio_content {
+    padding: 0 40px;
+    font-size: .8em;
+  }
+  .portfolio_item {
+    height: 160px;
+    .check {
+      font-size: .9em;
+      text-decoration: underline;
+    }
+  }
+}
+
+//501-768
+@media  screen and (max-width: 768px) {
+  .header .me_img {
+    width: 50vw;
+  }
+
+  .header_content_descr {
+    width: 100vw;
+    text-align: center;
+    font-size: .8em;
+  }
+
+  .header_hello {
+    @include flex(center, center);
+  }
+
+  .header_content {
+    padding-right: 0;
+  }
+  .portfolio_item:hover .portfolio_item_info {
+    margin-left: 30px;
+  }
+  .portfolio_item {
+    padding: 20px;
+    height: 100px;
+  }
+  .portfolio_item_info h3 {
+    margin-bottom: 10px;
+  }
+  .portfolio_item_info {
+    margin-left: 30px;
+  }
+
+  h2 {
+    padding: 1.5em 0;
+  }
+}
+//--500
+@media  screen and (max-width: 500px) {
+  .header_content {
+    padding: 0 20px;
+  }
+  .header_content_descr {
+    width: 100%;
+  }
+  .header .me_img {
+    width: 100%;
+  }
+  .header .me_img.visible {
+    opacity: .1;
+  }
+  .header .logo {
+    display: none;
+  }
+
+  .portfolio_content {
+    padding: 0 15px;
+    font-size: .6em;
+  }
+
+  .footer {
+    font-size: .8em;
+  }
+}

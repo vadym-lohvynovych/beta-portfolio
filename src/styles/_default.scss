@@ -1,0 +1,68 @@
+
+@mixin flex($align: stretch, $justify: stretch, $wrap: nowrap, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  flex-wrap: $wrap;
+}
+@mixin pseudo() {
+  position: absolute;
+  display: block;
+  content: "";
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+body {
+  position: relative;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: Relavey, "sans-serif";
+  overflow-x: hidden;
+  background: #fff;
+  color: #2c4046;
+}
+img {
+  display: block;
+  width: 100%;
+}
+
+h2 {
+  padding: 2em 0;
+  font-size: 2em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hide_content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  transition: 1s;
+  z-index: 999;
+  &.hidden {
+    opacity: 0;
+  }
+}
+
+.preloader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 7px;
+  background: #000;
+  box-shadow: 0 0 10px black;
+  z-index: 1000;
+  &.hidden {
+    height: 0;
+    transition: .6s;
+  }
+}

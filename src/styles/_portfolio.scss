@@ -1,0 +1,118 @@
+
+.portfolio {
+  padding: 8vh 0 12vh;
+
+  h2 {
+    transform: translateY(-100px);
+    opacity: 0;
+    transition: 1s ease-out;
+    &.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  &_content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &_item {
+    overflow: hidden;
+    position: relative;
+    max-width: 100%;
+    height: 200px;
+    padding: 40px;
+    border-bottom: 1px solid black;
+    background: #fff;
+    cursor: pointer;
+    transform: translateY(100px);
+    transition: .7s ease-out;
+    opacity: 0;
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+      h3, .portfolio_item_text p, .portfolio_item_number {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    &:nth-child(1) {
+      border-top: 1px solid black;
+    }
+
+    &:hover &_img {
+      opacity: .2;
+    }
+    &:hover &_info {
+      margin-left: 80px;
+    }
+    &:hover .check {
+      bottom: 0;
+    }
+
+    &_img {
+      position: absolute;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: .2s;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &_info {
+      position: relative;
+      @include flex(start);
+      z-index: 12;
+      transition: .25s;
+      h3 {
+        font-size: 1.4em;
+        margin-bottom: 20px;
+        transform: translateY(50px);
+        opacity: 0;
+        transition: .8s;
+        transition-delay: .3s;
+      }
+    }
+
+    &_text p {
+      transform: translateY(50px);
+      opacity: 0;
+      transition: .8s;
+      transition-delay: .6s;
+    }
+
+    &_number {
+      position: relative;
+      margin-right: 20px;
+      transform: translateX(-50px);
+      opacity: 0;
+      transition: .8s;
+      transition-delay: .45s;
+      &:before {
+        @include pseudo;
+        height: 1px;
+        width: 200px;
+        top: 50%;
+        left: -210px;
+        background: #000;
+      }
+    }
+  }
+
+  .check {
+    position: absolute;
+    left: 50%;
+    bottom: -50px;
+    font-size: .8em;
+    font-weight: 700;
+    transform: translate(-50%, -50%);
+    transition: .2s ease-in-out;
+  }
+}
